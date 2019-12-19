@@ -35,7 +35,7 @@ def printXDK():
 
 @app.route('/post/', methods=['POST'])
 def post_something():
-    param = request.json('name')
+    param = request.json['name']
     print(param)
     # You can add the test cases you made in the previous function, but in our case here you are just testing the POST functionality
     if param:
