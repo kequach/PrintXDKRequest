@@ -25,9 +25,17 @@ def respond():
     # Return the response in json format
     return jsonify(response)
 
+@app.route('/XDK', methods=['POST'])
+def printXDK():
+
+    # For debugging
+
+    # Return the response in json format
+    return jsonify(response)
+
 @app.route('/post/', methods=['POST'])
 def post_something():
-    param = request.form.get('name')
+    param = request.json('name')
     print(param)
     # You can add the test cases you made in the previous function, but in our case here you are just testing the POST functionality
     if param:
