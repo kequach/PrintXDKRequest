@@ -58,7 +58,7 @@ def index():
         printHtml = printHtml + '''
         <tr>
             <td class="tg-0pky">''' +num+'''</td>
-            <td class="tg-0pky">''' +str(value)+'''</td>
+            <td class="tg-0pky">''' +value+'''</td>
         </tr>
         '''
         num = num + 1
