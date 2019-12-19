@@ -55,6 +55,8 @@ def index():
         </tr>'''
     num = 1
     for value in lightList:
+        print(help(value))
+        help(value)
         printHtml = printHtml + '''
         <tr>
             <td class="tg-0pky">''' +num+'''</td>
