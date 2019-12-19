@@ -2,6 +2,7 @@
 from flask import Flask, request, jsonify
 app = Flask(__name__)
 
+lightList = []
 @app.route('/getmsg/', methods=['GET'])
 def respond():
     # Retrieve the name from url parameter
@@ -31,6 +32,7 @@ def printXDK():
     # For debugging
     light = str(request.json['light'])
     print("The current light value:" + light + " lux")
+    lightList.append(light)
 
     # Return the response in json format
     return light
@@ -44,7 +46,26 @@ def post_something():
 # A welcome message to test our server
 @app.route('/')
 def index():
-    return "<h1>Welcome to our server !!</h1>"
+    printHtml = "<h1>Welcome to the light measurement !!</h1> "
+    printHtml = printHtml + '''
+        <table class="tg">
+        <tr>
+            <th class="tg-0pky">Timestamp</th>
+            <th class="tg-0pky">Light value</th>
+        </tr>'''
+    num = 0
+    for value in lightList:
+        printHtml = printHtml + '''
+        <tr>
+            <td class="tg-0pky">''' +num+'''</td>
+            <td class="tg-0pky">''' +str(value)+'''</td>
+        </tr>
+        '''
+        num = num + 1
+
+    printHtml = printHtml + '</table>'
+
+    return ""
 
 if __name__ == '__main__':
     # Threaded option to enable multiple instances for multiple user access support
