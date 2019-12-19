@@ -33,6 +33,7 @@ def printXDK():
     print("The current light value:" + light)
 
     # Return the response in json format
+    return light
 
 @app.route('/post/', methods=['POST'])
 def post_something():
