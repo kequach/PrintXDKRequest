@@ -50,10 +50,10 @@ def index():
     printHtml = printHtml + '''
         <table class="tg">
         <tr>
-            <th class="tg-0pky">Timestamp</th>
+            <th class="tg-0pky">Number</th>
             <th class="tg-0pky">Light value</th>
         </tr>'''
-    num = 0
+    num = 1
     for value in lightList:
         printHtml = printHtml + '''
         <tr>
