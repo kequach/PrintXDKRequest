@@ -30,7 +30,7 @@ def printXDK():
 
     # For debugging
     light = request.json['light']
-    print("The current light value:" + light)
+    print("The current light value:" + str(light) + " lux")
 
     # Return the response in json format
     return light
