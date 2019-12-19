@@ -29,8 +29,8 @@ def respond():
 def printXDK():
 
     # For debugging
-    light = request.json['light']
-    print("The current light value:" + str(light) + " lux")
+    light = str(request.json['light'])
+    print("The current light value:" + light + " lux")
 
     # Return the response in json format
     return light
