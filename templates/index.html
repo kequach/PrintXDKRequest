@@ -1,0 +1,14 @@
+{% extends "base.html" %} {% block content %}
+<h1>Hello, DIS-Team!</h1>
+<table class="tg">
+    <tr>
+        <th class="tg-0pky">Number</th>
+        <th class="tg-0pky">Light value</th>
+    </tr>
+    {% for light in lightList %}
+
+    <tr>
+        <td class="tg-0pky">{{ loop.index }}</td>
+        <td class="tg-0pky">{{ light }}</td>
+    </tr>
+    {% endfor %} {% endblock %}

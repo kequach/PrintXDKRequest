@@ -1,5 +1,5 @@
 # app.py
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 app = Flask(__name__)
 
 lightList = []
@@ -46,27 +46,7 @@ def post_something():
 # A welcome message to test our server
 @app.route('/')
 def index():
-    printHtml = "<h1>Welcome to the light measurement !!</h1> "
-    printHtml = printHtml + '''
-        <table class="tg">
-        <tr>
-            <th class="tg-0pky">Number</th>
-            <th class="tg-0pky">Light value</th>
-        </tr>'''
-    num = 1
-    for value in lightList:
-        print(value)
-        printHtml = printHtml + '''
-        <tr>
-            <td class="tg-0pky">''' +str(num)+'''</td>
-            <td class="tg-0pky">''' +value+'''</td>
-        </tr>
-        '''
-        num = num + 1
-
-    printHtml = printHtml + '</table>'
-
-    return printHtml
+    return render_template('index.html', lightList='lightList')
 
 if __name__ == '__main__':
     # Threaded option to enable multiple instances for multiple user access support
