@@ -2,10 +2,35 @@
 
 <head>
     <title>XDK light</title>
+    <style>
+        body {
+            background-color: linen;
+        }
+        
+        h1 {
+            color: maroon;
+        }
+        
+        table {
+            border-collapse: collapse;
+            border: 1px solid salmon;
+        }
+        
+        tr {
+            border: none;
+        }
+        
+        td,
+        th {
+            padding: 0 10 0 10;
+            border-right: solid 1px salmon;
+            border-left: solid 1px salmon;
+        }
+    </style>
 </head>
 
 <body>
-    <div>XDK: <a href="/index">Home</a></div>
+    <div>XDK: <a href="/">Refresh</a></div>
     <hr> {% block content %}{% endblock %}
 </body>
 
